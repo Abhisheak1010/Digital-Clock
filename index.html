@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="clockspace"></div>
+    <script>
+      function time() {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        var session = "AM";
+        if (h == 0) {
+          h = 12; //for 12 hour format
+        }
+        if (h > 12) {
+          h = h - 12;
+          session = "PM"; //for 12 hour format
+        }
+        h = h < 10 ? "0" + h : h; //for double digit display
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+
+        document.getElementById("clockspace").innerHTML =
+          h + ":" + m + ":" + s + " " + session;
+        setTimeout(time, 1000);
+      }
+      time();
+    </script>
+  </body>
+</html>
