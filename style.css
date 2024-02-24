@@ -1,0 +1,13 @@
+body {
+  background: black;
+}
+
+#clockspace {
+  position: absolute;
+  color: green  ;
+  top: 50%;
+  left: 50%;
+  font-size: 100px;
+  transform: translateX(-50%) translateY(-50%);
+  letter-spacing: 8px;
+}
